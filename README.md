@@ -5,7 +5,7 @@
   
   <br />
   
-  [![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_Site-orange?style=for-the-badge&logo=netlify)](https://neurox-ride.netlify.app/)
+  [![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_Site-orange?style=for-the-badge&logo=netlify)](https://rapido-ride.netlify.app/)
   [![Tech Stack](https://img.shields.io/badge/MERN-Stack-blue?style=for-the-badge)](https://github.com/topics/mern)
   
   <p align="center">
@@ -86,8 +86,8 @@ Follow these instructions to run the project on your local machine for developme
 
 1.  **Clone the Repository**
     ```bash
-    git clone https://github.com/your-username/neurox-ride.git
-    cd neurox-ride
+    git clone https://github.com/your-username/RapidoRide_cloneBy-rapido.bike.git
+    cd RapidoRide_cloneBy-rapido.bike
     ```
 
 2.  **Install Dependencies**
@@ -126,6 +126,6 @@ Follow these instructions to run the project on your local machine for developme
 ```
 
 <div align="center">
-  <sub>Built with ❤️ by the Neurox Team</sub>
+  <sub>Built with ❤️ by Rifatuzzaman Rifat</sub>
 </div>
 F
