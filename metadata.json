@@ -1,0 +1,5 @@
+{
+  "name": "RapidoRide",
+  "description": "A comprehensive ride-hailing platform featuring Rider, Captain, and Admin interfaces with simulated real-time ride matching and tracking.",
+  "requestFramePermissions": ["geolocation"]
+}
