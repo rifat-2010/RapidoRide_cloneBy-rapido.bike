@@ -3,6 +3,10 @@ import mongoose from "mongoose";
 import cors from "cors";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env.local" });
+dotenv.config();
 
 const app = express();
 const JWT_SECRET = "super_secret_rapido_key_12345"; // In production, use process.env
@@ -27,8 +31,8 @@ app.use((req, res, next) => {
 });
 
 // --- MONGODB CONNECTION ---
-const DB_CONNECT =
-  "mongodb+srv://rapido-website:aYCo7mrBsmCbNJhi@cluster0.qwnp7az.mongodb.net/rapido-db?appName=Cluster0";
+const DB_CONNECT = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.PASSWORD}@cluster0.qwnp7az.mongodb.net/rapido-db?appName=Cluster0`;
+// const DB_CONNECT = `mongodb+srv://rapido-website:aYCo7mrBsmCbNJhi@cluster0.qwnp7az.mongodb.net/rapido-db?appName=Cluster0`;
 
 mongoose
   .connect(DB_CONNECT)
