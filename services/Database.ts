@@ -9,7 +9,7 @@ import {
 
 // CHANGED: Use relative path '/api'.
 // The Vite Proxy (configured in vite.config.ts) will forward this to https://rapido-ride-six.vercel.app/api
-const API_URL = "/api";
+const API_URL = (import.meta as any).env.VITE_API_URL;
 
 class DatabaseService {
   private getToken() {

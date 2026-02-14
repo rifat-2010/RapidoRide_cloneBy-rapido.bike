@@ -562,8 +562,7 @@ export const Website: React.FC<WebsiteProps> = ({
         </div>
       </section>
 
-
-            {/* --- SAFETY SECTION --- */}
+      {/* --- SAFETY SECTION --- */}
       <section id="safety" className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-16">
           <div className="lg:w-1/2">
@@ -910,45 +909,51 @@ export const Website: React.FC<WebsiteProps> = ({
               </div>
             </div>
             <div>
-              <h4 className="font-bold text-white mb-6">Company</h4>
+              <h4 className="font-bold text-white mb-6">Explore</h4>
               <ul className="space-y-3 text-sm text-gray-500">
-                <li>
-                  <button className="hover:text-yellow-400 transition-colors">
-                    About us
-                  </button>
-                </li>
-                <li>
-                  <button className="hover:text-yellow-400 transition-colors">
-                    Careers
-                  </button>
-                </li>
-                <li>
-                  <button className="hover:text-yellow-400 transition-colors">
-                    Blog
-                  </button>
-                </li>
+                {["About", "Services", "How it Works", "Blog"].map((item) => (
+                  <li key={item}>
+                    <button
+                      onClick={() =>
+                        scrollToSection(item.toLowerCase().replace(/\s+/g, "-"))
+                      }
+                      className="hover:text-yellow-400 transition-colors"
+                    >
+                      {item}
+                    </button>
+                  </li>
+                ))}
               </ul>
             </div>
             <div>
               <h4 className="font-bold text-white mb-6">Support</h4>
               <ul className="space-y-3 text-sm text-gray-500">
                 <li>
-                  <button className="hover:text-yellow-400 transition-colors">
-                    Help Center
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => scrollToSection("safety")}
+                  <a
+                    target="_blank"
+                    href="https://en.wikipedia.org/wiki/Wikipedia:Help_desk"
                     className="hover:text-yellow-400 transition-colors"
                   >
-                    Safety
-                  </button>
+                    Help Center
+                  </a>
                 </li>
                 <li>
-                  <button className="hover:text-yellow-400 transition-colors">
+                  <a
+                    target="_blank"
+                    href="https://en.wikipedia.org/wiki/Safety"
+                    className="hover:text-yellow-400 transition-colors"
+                  >
+                    Safety Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://en.wikipedia.org/wiki/Terms_of_service"
+                    className="hover:text-yellow-400 transition-colors"
+                  >
                     Terms of Service
-                  </button>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -960,8 +965,9 @@ export const Website: React.FC<WebsiteProps> = ({
               <p className="text-gray-500 text-sm">Bangalore, India</p>
             </div>
           </div>
-          <div className="mt-12 pt-8 border-t border-gray-900 text-center text-gray-600 text-xs">
-            © 2026 RapidoRide Technologies Pvt Ltd. All rights reserved.
+          <div className="mt-12 pt-8 border-t border-gray-900 text-center text-white hover:text-gray-500 text-xs">
+            © {new Date().getFullYear()} RapidoRide Technologies Pvt Ltd. All
+            rights reserved.
           </div>
         </div>
       </footer>

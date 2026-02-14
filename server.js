@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 
-dotenv.config({ path: ".env.local" });
+dotenv.config({ path: ".env" });
 dotenv.config();
 
 const app = express();
@@ -32,13 +32,12 @@ app.use((req, res, next) => {
 
 // --- MONGODB CONNECTION ---
 const DB_CONNECT = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.PASSWORD}@cluster0.qwnp7az.mongodb.net/rapido-db?appName=Cluster0`;
-// const DB_CONNECT = `mongodb+srv://rapido-website:aYCo7mrBsmCbNJhi@cluster0.qwnp7az.mongodb.net/rapido-db?appName=Cluster0`;
 
-mongoose
+await mongoose
   .connect(DB_CONNECT)
   .then(() => console.log("✅ Connected to Real MongoDB Atlas"))
   .catch((err) => console.error("❌ MongoDB Connection Error:", err));
-
+ mongoose.set("bufferCommands", false);
 // --- SCHEMAS ---
 
 const UserSchema = new mongoose.Schema(
